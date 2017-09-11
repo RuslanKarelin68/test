@@ -8,10 +8,15 @@ module.exports = {
     output: {
         path: __dirname + '/public',
         filename: "bundle.js"
-    }/*,
+    },
     module: {
-        loaders: [
-            { test: /\.css$/, loader: "style!css" }
-        ]
-    }*/
+        rules: [{
+            test: /\.less$/,
+            use: [
+                "style-loader",
+                "css-loader",
+                "less-loader"
+            ]
+        }]
+    }
 };
